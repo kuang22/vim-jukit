@@ -206,43 +206,43 @@ command! -nargs=1 JukitOutHist :call jukit#splits#output_and_history(<q-args>)
 fun! s:set_mappings() abort
     " splits
     if !hasmapto('jukit#splits#output', 'n')
-        nnoremap <buffer> <leader>os <cmd>call jukit#splits#output()<cr>
+        nnoremap <buffer> <localleader>os <cmd>call jukit#splits#output()<cr>
     endif
     if !hasmapto('jukit#splits#term', 'n')
-        nnoremap <buffer> <leader>ts <cmd>call jukit#splits#term()<cr>
+        nnoremap <buffer> <localleader>ts <cmd>call jukit#splits#term()<cr>
     endif
     if !hasmapto('jukit#splits#history', 'n')
-        nnoremap <buffer> <leader>hs <cmd>call jukit#splits#history()<cr>
+        nnoremap <buffer> <localleader>hs <cmd>call jukit#splits#history()<cr>
     endif
     if !hasmapto('jukit#splits#output_and_history', 'n')
-        nnoremap <buffer> <leader>ohs <cmd>call jukit#splits#output_and_history()<cr>
+        nnoremap <buffer> <localleader>ohs <cmd>call jukit#splits#output_and_history()<cr>
     endif
     if !hasmapto('jukit#splits#close_history', 'n')
-        nnoremap <buffer> <leader>hd <cmd>call jukit#splits#close_history()<cr>
+        nnoremap <buffer> <localleader>hd <cmd>call jukit#splits#close_history()<cr>
     endif
     if !hasmapto('jukit#splits#close_output_split', 'n')
-        nnoremap <buffer> <leader>od <cmd>call jukit#splits#close_output_split()<cr>
+        nnoremap <buffer> <localleader>od <cmd>call jukit#splits#close_output_split()<cr>
     endif
     if !hasmapto('jukit#splits#close_output_and_history', 'n')
-        nnoremap <buffer> <leader>ohd <cmd>call jukit#splits#close_output_and_history(1)<cr>
+        nnoremap <buffer> <localleader>ohd <cmd>call jukit#splits#close_output_and_history(1)<cr>
     endif
     if !hasmapto('jukit#splits#out_hist_scroll(1)', 'n')
-        nnoremap <buffer> <leader>j <cmd>call jukit#splits#out_hist_scroll(1)<cr>
+        nnoremap <buffer> <localleader>j <cmd>call jukit#splits#out_hist_scroll(1)<cr>
     endif
     if !hasmapto('jukit#splits#out_hist_scroll(0)', 'n')
-        nnoremap <buffer> <leader>k <cmd>call jukit#splits#out_hist_scroll(0)<cr>
+        nnoremap <buffer> <localleader>k <cmd>call jukit#splits#out_hist_scroll(0)<cr>
     endif
     if !hasmapto('jukit#splits#show_last_cell_output', 'n')
-        nnoremap <buffer> <leader>so <cmd>call jukit#splits#show_last_cell_output(1)<cr>
+        nnoremap <buffer> <localleader>so <cmd>call jukit#splits#show_last_cell_output(1)<cr>
     endif
     if !hasmapto('jukit#ueberzug#set_default_pos', 'n')
-        nnoremap <buffer> <leader>pos <cmd>call jukit#ueberzug#set_default_pos()<cr>
+        nnoremap <buffer> <localleader>pos <cmd>call jukit#ueberzug#set_default_pos()<cr>
     endif
     if !hasmapto('jukit#splits#toggle_auto_hist', 'n')
-        nnoremap <buffer> <leader>ah <cmd>call jukit#splits#toggle_auto_hist()<cr>
+        nnoremap <buffer> <localleader>ah <cmd>call jukit#splits#toggle_auto_hist()<cr>
     endif
     if !hasmapto('jukit#layouts#set_layout', 'n')
-        nnoremap <buffer> <leader>sl <cmd>call jukit#layouts#set_layout()<cr>
+        nnoremap <buffer> <localleader>sl <cmd>call jukit#layouts#set_layout()<cr>
     endif
 
     " sending code
@@ -253,74 +253,74 @@ fun! s:set_mappings() abort
         vnoremap <buffer> <cr> <esc><cmd>call jukit#send#selection()<cr>
     endif
     if !hasmapto('jukit#send#section', 'n')
-        nnoremap <buffer> <leader><space> <cmd>call jukit#send#section(0)<cr>
+        nnoremap <buffer> <localleader><space> <cmd>call jukit#send#section(0)<cr>
     endif
     if !hasmapto('jukit#send#until_current_section', 'n')
-        nnoremap <buffer> <leader>cc <cmd>call jukit#send#until_current_section()<cr>
+        nnoremap <buffer> <localleader>cc <cmd>call jukit#send#until_current_section()<cr>
     endif
     if !hasmapto('jukit#send#all', 'n')
-        nnoremap <buffer> <leader>all <cmd>call jukit#send#all()<cr>
+        nnoremap <buffer> <localleader>all <cmd>call jukit#send#all()<cr>
     endif
 
     " cells
     if !hasmapto('jukit#cells#delete', 'n')
-        nnoremap <buffer> <leader>cd <cmd>call jukit#cells#delete()<cr>
+        nnoremap <buffer> <localleader>cd <cmd>call jukit#cells#delete()<cr>
     endif
     if !hasmapto('jukit#cells#split', 'n')
-        nnoremap <buffer> <leader>cs <cmd>call jukit#cells#split()<cr>
+        nnoremap <buffer> <localleader>cs <cmd>call jukit#cells#split()<cr>
     endif
     if !hasmapto('jukit#cells#create_below(0)', 'n')
-        nnoremap <buffer> <leader>co <cmd>call jukit#cells#create_below(0)<cr>
+        nnoremap <buffer> <localleader>co <cmd>call jukit#cells#create_below(0)<cr>
     endif
     if !hasmapto('jukit#cells#create_above(0)', 'n')
-        nnoremap <buffer> <leader>cO <cmd>call jukit#cells#create_above(0)<cr>
+        nnoremap <buffer> <localleader>cO <cmd>call jukit#cells#create_above(0)<cr>
     endif
     if !hasmapto('jukit#cells#create_below(1)', 'n')
-        nnoremap <buffer> <leader>ct <cmd>call jukit#cells#create_below(1)<cr>
+        nnoremap <buffer> <localleader>ct <cmd>call jukit#cells#create_below(1)<cr>
     endif
     if !hasmapto('jukit#cells#create_above(1)', 'n')
-        nnoremap <buffer> <leader>cT <cmd>call jukit#cells#create_above(1)<cr>
+        nnoremap <buffer> <localleader>cT <cmd>call jukit#cells#create_above(1)<cr>
     endif
     if !hasmapto('jukit#cells#merge_above', 'n')
-        nnoremap <buffer> <leader>cM <cmd>call jukit#cells#merge_above()<cr>
+        nnoremap <buffer> <localleader>cM <cmd>call jukit#cells#merge_above()<cr>
     endif
     if !hasmapto('jukit#cells#merge_below', 'n')
-        nnoremap <buffer> <leader>cm <cmd>call jukit#cells#merge_below()<cr>
+        nnoremap <buffer> <localleader>cm <cmd>call jukit#cells#merge_below()<cr>
     endif
     if !hasmapto('jukit#cells#move_up', 'n')
-        nnoremap <buffer> <leader>ck <cmd>call jukit#cells#move_up()<cr>
+        nnoremap <buffer> <localleader>ck <cmd>call jukit#cells#move_up()<cr>
     endif
     if !hasmapto('jukit#cells#move_down', 'n')
-        nnoremap <buffer> <leader>cj <cmd>call jukit#cells#move_down()<cr>
+        nnoremap <buffer> <localleader>cj <cmd>call jukit#cells#move_down()<cr>
     endif
     if !hasmapto('jukit#cells#delete_outputs(0)', 'n')
-        nnoremap <buffer> <leader>ddo <cmd>call jukit#cells#delete_outputs(0)<cr>
+        nnoremap <buffer> <localleader>ddo <cmd>call jukit#cells#delete_outputs(0)<cr>
     endif
     if !hasmapto('jukit#cells#delete_outputs(1)', 'n')
-        nnoremap <buffer> <leader>dda <cmd>call jukit#cells#delete_outputs(1)<cr>
+        nnoremap <buffer> <localleader>dda <cmd>call jukit#cells#delete_outputs(1)<cr>
     endif
     if !hasmapto('jukit#cells#jump_to_next_cell', 'n')
-        nnoremap <buffer> <leader>J <cmd>call jukit#cells#jump_to_next_cell()<cr>
+        nnoremap <buffer> <localleader>J <cmd>call jukit#cells#jump_to_next_cell()<cr>
     endif
     if !hasmapto('jukit#cells#jump_to_previous_cell', 'n')
-        nnoremap <buffer> <leader>K <cmd>call jukit#cells#jump_to_previous_cell()<cr>
+        nnoremap <buffer> <localleader>K <cmd>call jukit#cells#jump_to_previous_cell()<cr>
     endif
 
     " ipynb conversion
     if !hasmapto('jukit#convert#notebook_convert', 'n')
-        nnoremap <buffer> <leader>np <cmd>call jukit#convert#notebook_convert(g:jukit_notebook_viewer)<cr>
+        nnoremap <buffer> <localleader>np <cmd>call jukit#convert#notebook_convert(g:jukit_notebook_viewer)<cr>
     endif
     if !hasmapto("jukit#convert#save_nb_to_file(0,1,'html')", 'n')
-        nnoremap <buffer> <leader>ht <cmd>call jukit#convert#save_nb_to_file(0,1,'html')<cr>
+        nnoremap <buffer> <localleader>ht <cmd>call jukit#convert#save_nb_to_file(0,1,'html')<cr>
     endif
     if !hasmapto("jukit#convert#save_nb_to_file(0,1,'pdf')", 'n')
-        nnoremap <buffer> <leader>pd <cmd>call jukit#convert#save_nb_to_file(0,1,'pdf')<cr>
+        nnoremap <buffer> <localleader>pd <cmd>call jukit#convert#save_nb_to_file(0,1,'pdf')<cr>
     endif
     if !hasmapto("jukit#convert#save_nb_to_file(1,1,'html')", 'n')
-        nnoremap <buffer> <leader>rht <cmd>call jukit#convert#save_nb_to_file(1,1,'html')<cr>
+        nnoremap <buffer> <localleader>rht <cmd>call jukit#convert#save_nb_to_file(1,1,'html')<cr>
     endif
     if !hasmapto("jukit#convert#save_nb_to_file(1,1,'pdf')", 'n')
-        nnoremap <buffer> <leader>rpd <cmd>call jukit#convert#save_nb_to_file(1,1,'pdf')<cr>
+        nnoremap <buffer> <localleader>rpd <cmd>call jukit#convert#save_nb_to_file(1,1,'pdf')<cr>
     endif
 endfun
 
